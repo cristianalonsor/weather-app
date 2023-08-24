@@ -1,0 +1,75 @@
+<ng-container *ngIf="data$ | async as data">
+
+  <div class="d-flex justify-content-center" *ngIf="data.weather == null">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Consulta la Temperatura</h5>
+        <h5>
+          <i class="fa fa-arrow-up"></i>
+          Para Iniciar escribe algo en la caja de texto arriba y presiona enter o el botón buscar
+        </h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Aplicación en Angular</h6>
+        <p class="card-text">
+          Ejemplo rápido para consumir una API de Springboot y utilizar NgRx para el manejo
+          del estado global de la Aplicación, manejando y utilizando los datos de la API provehída
+        </p>
+        <hr>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item fas fa-coffee">Springboot</li>
+          <li class="list-group-item fa fa-code">Angular</li>
+          <li class="list-group-item fa fa-code">NgRx</li>
+          <li class="list-group-item fa fa-cut">Bootstrap</li>
+          <li class="list-group-item fa fa-book">FontAwesome</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="data.weather != null">
+    <div class="row d-flex justify-content-center">
+      <div class="col-4">
+        <div class="table-responsive">
+          <table class="table table-success">
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Información</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="">
+                <td scope="row">Comuna</td>
+                <td>{{ (data.weather!.name) }}</td>
+              </tr>
+              <tr class="">
+                <td scope="row">Temperatura</td>
+                <td>{{ data.weather!.main!.temp }}°C</td>
+              </tr>
+              <tr>
+                <td scope="row">Sensación Térmica</td>
+                <td>{{ data.weather!.main!.feels_like }}°C</td>
+              </tr>
+              <tr>
+                <td scope="row">Humedad</td>
+                <td>{{ data.weather!.main!.humidity }}</td>
+              </tr>
+              <tr>
+                <td scope="row">Temperatura Mínima</td>
+                <td>{{ data.weather!.main!.temp_min }}°C</td>
+              </tr>
+              <tr>
+                <td scope="row">Temperatura Máxima</td>
+                <td>{{ data.weather!.main!.temp_max }}°C</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-8">
+        <app-map></app-map>
+      </div>
+    </div>
+  </div>
+
+
+</ng-container>

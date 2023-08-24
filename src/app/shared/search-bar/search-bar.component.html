@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Tiempo App</a>
+    <form class="d-flex">
+        <input class="form-control me-2"
+               type="search"
+               placeholder="Buscar"
+               (keyup.enter)="buscar()"
+               [formControl]="txtInput">
+        <button class="btn btn-outline-success"
+                type="button"
+                (click)="buscar()"
+        >Buscar</button>
+    </form>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/" >Tabla</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/map" >Mapa</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
