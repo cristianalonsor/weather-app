@@ -1,11 +1,22 @@
-<app-search-bar></app-search-bar>
+<nz-layout>
+  <app-search-bar></app-search-bar>
+</nz-layout>
 
-<div class="page-body-wrapper">
-    <div class="main-panel">
+<nz-layout>
+  <nz-content>
+    <!-- <div class="page-body-wrapper"> -->
+      <div class="main-panel">
         <div class="content-wrapper">
-            <router-outlet></router-outlet>
+          <router-outlet></router-outlet>
         </div>
-    </div>
-</div>
+      </div>
+    <!-- </div> -->
+  </nz-content>
+</nz-layout>
 
-<app-footer></app-footer>
+
+
+
+<nz-layout>
+  <app-footer></app-footer>
+</nz-layout>
