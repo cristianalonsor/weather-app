@@ -19,14 +19,13 @@ export class MapComponent implements OnInit {
     panControl: false,
     scaleControl: false,
     disableDoubleClickZoom: false,
+    draggable: false,
   }
 
   marker = {
     lat: 1,
     lng: 1
   }
-
-  map: any;
 
   constructor(private store: Store<AppState>,) { }
 

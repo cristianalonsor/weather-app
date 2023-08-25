@@ -5,5 +5,5 @@ import { ConditionsComponent } from '../information/conditions/conditions.compon
 
 export const containerRoutes: Routes = [
     { path: '', component: TiempoComponent },
-    { path: 'map', component: ConditionsComponent },
+    { path: 'conditions', component: ConditionsComponent },
 ]
