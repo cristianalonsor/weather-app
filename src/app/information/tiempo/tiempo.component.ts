@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { combineLatest, map, Observable } from 'rxjs';
+import { combineLatest, map, Observable, tap } from 'rxjs';
 import Swal from 'sweetalert2';
 import { AppState } from '../../app.reducers';
 
@@ -29,6 +29,17 @@ export class TiempoComponent implements OnInit {
   ngOnInit(): void {
     this.store.subscribe(
       data => {
+        if(data.weather.isLoading){
+          Swal.fire({
+            title: "Cargando datos de la comuna",
+            icon : "info",
+            didOpen: () => {
+              Swal.showLoading();
+            }
+          })
+        } else {
+          Swal.close()
+        }
       }
     )
   }

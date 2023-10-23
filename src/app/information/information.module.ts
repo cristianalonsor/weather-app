@@ -14,7 +14,7 @@ import { ConditionsComponent } from './conditions/conditions.component';
     MapComponent,
     TiempoComponent,
     MapComponent,
-    ConditionsComponent
+    ConditionsComponent,
   ],
   imports: [
     CommonModule,

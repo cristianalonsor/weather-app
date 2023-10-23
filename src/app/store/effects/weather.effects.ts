@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, of, switchMap, tap } from 'rxjs';
+import { catchError, map, of, switchMap } from 'rxjs';
 import { WeatherService } from 'src/app/services/weather.service';
 import * as weatherActions from '../actions/weather.actions';
 import { WeatherAppInterface, Coord } from '../../interface/weather.interface';
+import Swal from 'sweetalert2';
 
 @Injectable()
 export class WeatherEffect {
