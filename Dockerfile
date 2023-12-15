@@ -16,8 +16,8 @@ COPY . /app
 
 RUN npm run build --prod
 
-##segundo paso##
-
+#segundo paso##
+#montamos el servidor en el que correrá la aplicación
 FROM nginx:1.17.1-alpine
 
 COPY --from=build-step /app/dist/weather-app /usr/share/nginx/html
